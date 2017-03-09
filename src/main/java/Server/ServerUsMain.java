@@ -11,6 +11,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.nio.channels.Pipe;
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -25,8 +26,9 @@ public class ServerUsMain {
         BufferedReader bis = new BufferedReader(new InputStreamReader( socket.getInputStream()));
         {
             String input = bis.readLine();
-            String[] splited = input.split("\\s+");
+            String[] splited = input.split(" ");
             String tmp;
+
             if (splited[0].equals("search")){
                 System.out.println("in search");
                 Search search = new Search();
@@ -42,13 +44,14 @@ public class ServerUsMain {
                 search.setChildCount(Integer.parseInt(tmp));
                 tmp = splited[6];
                 search.setInfantCount(Integer.parseInt(tmp));
-
                 ClientUsMain c = new ClientUsMain();
                 c.searchForFlightPrices(search);
 
                 System.out.println("Object Search is created");
             }
+
             if (splited[0].equals("reserve")) {
+                System.out.println("in reserve");
                 Reserve reserve = new Reserve();
                 tmp = splited[1];
                 reserve.setOriginCode(tmp);
@@ -71,11 +74,11 @@ public class ServerUsMain {
 
                 //next line for name family name
                 int pass = reserve.getAdlultCount() + reserve.getChildCount() + reserve.getInfantCount();
-                List<Passenger> passengers = null;
+                List<Passenger> passengers = new ArrayList<Passenger>();
                 for (int i = 0 ; i < pass ; i++){
                     String passInput = bis.readLine();
-                    String[] passInfo = passInput.split("\\s+");
-                    String temp = null;
+                    String[] passInfo = passInput.split(" ");
+                    String temp = "";
                     Passenger passenger = new Passenger();
                     temp = passInfo[0];
                     passenger.setFirst(temp);
@@ -85,7 +88,7 @@ public class ServerUsMain {
                     passenger.setId(Integer.parseInt(temp));
                     passengers.add(passenger);
                 }
-
+                reserve.setPassengers(passengers);
                 ClientUsMain c = new ClientUsMain();
                 c.getReservationObj(reserve);
 
@@ -94,56 +97,13 @@ public class ServerUsMain {
 
             if (splited[0].equals("finalize")) {
                 Token token = new Token();
+                token.setToken(splited[1]);
+
+                ClientUsMain c = new ClientUsMain();
+                c.getTokenObj(token);
+
+                System.out.println("Object Token is created");
             }
-
-//            if (splited[0].equals("reserve")){
-//                Flight flight = new Flight();
-//                tmp = splited[1];
-//                flight.setOrigin_code(tmp);
-//                tmp = splited[2];
-//                flight.setDestination_code(tmp);
-//                tmp = splited[3];
-//                flight.setDate(tmp);
-//                tmp = splited[4];
-//                flight.setAirline_code(tmp);
-//                tmp = splited[5];
-//                flight.setFlight_no(Integer.parseInt(tmp));
-//                tmp = splited[6];
-//                flight.setSeat_class(tmp);
-//                tmp = splited[7];
-//                flight.setAdult(Integer.parseInt(tmp));
-//                tmp = splited[8];
-//                flight.setChild(Integer.parseInt(tmp));
-//                tmp = splited[9];
-//                flight.setInfant(Integer.parseInt(tmp));
-//
-//                //next line for name family name
-//
-//                List<Passenger> passengers = null;
-//                for (int i = 0 ; i < flight.getAdult() + flight.getChild() + flight.getInfant() ; i++){
-//                    String passInput = bis.readLine();
-//                    String[] passInfo = passInput.split("\\s+");
-//                    String temp = null;
-//                    Passenger passenger = new Passenger();
-//                    temp = passInfo[0];
-//                    passenger.setFirst(temp);
-//                    temp = passInfo[1];
-//                    passenger.setLast(temp);
-//                    temp = passInfo[2];
-//                    passenger.setId(Integer.parseInt(temp));
-//                    passengers.add(passenger);
-//                }
-//
-//                Reservation reservation = new Reservation();
-//                reservation.setFlight(flight);
-//                reservation.setPassengers(passengers);
-//
-//
-//                ClientUsMain c = new ClientUsMain();
-//                c.getReservationObj(reservation);
-//
-//            }
-
         }
 
         socket.close();
@@ -151,7 +111,11 @@ public class ServerUsMain {
     }
 
     public void showClientFlightPrices(String result){
-        System.out.println(result);
+        //IR 452 05Feb THR MHD 1740 1850 M80
+        //Flight: IR 452 Departure: 17:40 Arrival 18:50 Airplane: M80
+        //String[] str = result.split(" ");
+        //System.out.println("Flight: " + str[0] + " " + str[1] + "Departure: " + str[5] + " " + "Arrival: " + str[6] + " " + "Airplane: " + str[7]);
+       // System.out.println(result);
     }
     public void showClientTokenPrice(String token, int totalPrice){
         System.out.println(token + " " + totalPrice);

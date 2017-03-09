@@ -1,0 +1,102 @@
+@font-face {
+    font-family: Vazir;
+    src: url("assets/Font/Vazir.ttf"); format("wolf");
+}
+
+body {
+    font-family: Vazir;
+    
+}
+
+.top-bar {
+    padding-top: 10px;
+    font-size: 20px;
+    color: rgb(0,0,77);
+}
+
+.fa-user {
+    color: rgb(0,0,77);
+    font-size: 3em;
+}
+
+#LogoWhite {
+    width: 65px;
+    height: 55px;
+}
+
+.list-nav {
+    background-color: rgb(108,103,169);
+    height: 10%;
+    width: 100%;
+    text-align: center;
+    padding-top: 2%;
+    color: rgb(63,61,104);
+    font-size: 135%
+}
+
+.col-list-nav {
+    color: rgb(63,61,104) !important;
+}
+
+.col-list-nav-act {
+    color: white;
+}
+
+.left-al {
+    padding-top: 4%;
+    text-align: left;
+    direction: rtl;
+}
+
+.right-al {
+    padding-top: 4%;
+    text-align: right;
+}
+
+.main-section {
+    background-color: rgb(238, 238, 238);
+    width: 100%;
+    height: 50%;
+    margin-top: 1%;
+    padding-top: 2%;
+}
+
+.flight-data {
+/*    display: flex;*/
+    background-color: white;
+    width: 95%;
+    height: 35%;
+/*    display: block;*/
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    margin-top: 2%;
+}
+
+.price {
+    background-color: rgb(227,148,136);
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+    color: rgb(113, 71, 65);
+    text-align: center;
+    direction: rtl;
+}
+
+.de-arr-time {
+    text-align: center;
+    font-size: 200%;
+    padding-top: 3%;
+}
+
+.flight-no {
+    height: 100%;
+    border-radius: 0 10px 10px 0;
+    text-align: center
+}
+
+.seat-flight {
+    text-align: center;
+    font-size: 100%;
+    padding-top: 3%;
+    color: rgb(160, 160, 160);
+}

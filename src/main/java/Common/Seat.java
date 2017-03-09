@@ -51,14 +51,13 @@ public class Seat {
         }
         else {
             int count = Character.getNumericValue(seatCount);
-            if (count > passengerCount){
+            if (count >= passengerCount){
                 seatCount = (char) (count - passengerCount);
                 return String.format("Class: %c Price: %d", seatType,
                         adult_no * adult_price + child_no * child_price + infant_no * infant_price);
             }
             else
                 return "There is no Seat left";
-
         }
 
     }

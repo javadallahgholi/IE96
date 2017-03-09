@@ -26,6 +26,7 @@ public class UIController {
 
     public void GetSearchResult(String Result){
         ServerUsMain s = new ServerUsMain();
-        s.showClientFlightPrices(Result);
+        System.out.println(Result);
+        //s.showClientFlightPrices(Result);
     }
 }

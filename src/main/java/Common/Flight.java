@@ -23,8 +23,19 @@ public class Flight implements Serializable, ControllerNode {
     private String seats;
     private String flightInfo;
 
-    public String getFlightInfo(){
-        return flightInfo;
+//    public String getFlightInfo(){
+//        System.out.println("\t\t\t" + flightInfo);
+//        return flightInfo;
+//    }
+
+    public String weDoNotKnowWhatIsThisMethodName(){
+        String[] splited = flightInfo.split(" ");
+        return String.format("Flight: %s %s Departure: %s Arrival: %s Airplane: %s", splited[0], splited[1], turnToTime(splited[5])
+                , turnToTime(splited[6]), splited[7]);
+    }
+
+    public String turnToTime(String string ){
+        return string.substring(0,2) + ":" + string.substring(2);
     }
 
     public Flight(String flightInfo , String seats) {

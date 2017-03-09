@@ -52,5 +52,6 @@ public class Token {
         return adultPrice + childPrice + infantPrice;
     }
 
+    public String FIN_query() {return "FIN " + token; }
 
 }

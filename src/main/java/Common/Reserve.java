@@ -1,6 +1,9 @@
 package Common;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Vector;
 
 /**
  * Created by j-ghazvne on 2/12/17.
@@ -13,8 +16,9 @@ public class Reserve implements ControllerNode {
     private int flightNo;
     private String seatType;
     private int adlultCount , childCount , infantCount;
-    private List<Passenger> passengers;
+    private List<Passenger> passengers = new ArrayList<Passenger>();
     private String token;
+
 
     public List<Passenger> getPassengers() {
         return passengers;
@@ -105,10 +109,17 @@ public class Reserve implements ControllerNode {
     }
 
     public String RES_query() {
-        return "RES " + originCode + " " + destinationCode + " " + date
+        String result = "";
+        String s = "";
+        String temp = "RES " + originCode + " " + destinationCode + " " + date
                 + " " + airlineCode + " " + flightNo + " " + seatType
-                + " " + adlultCount + " " + childCount + " " + infantCount + ".%n " +
-                passengers.toString();
+                + " " + adlultCount + " " + childCount + " " + infantCount + "\n";
+        for(int i = 0; i < passengers.size(); i++)
+            s += passengers.get(i).getFirst() + " " + passengers.get(i).getLast() + " "
+                    + Integer.toString(passengers.get(i).getId()) + "\n";
+        result = temp + s.substring(0, s.length()-1);
+        //System.out.println(result);
+        return result;
     }
 
     public String getFinalizationOfReservation(Reserve reserve){

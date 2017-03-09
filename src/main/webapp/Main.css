@@ -1,0 +1,236 @@
+@font-face {
+    font-family: Vazir;
+    src: url("/Font/Vazir.ttf") format("wolf");
+}
+
+body{
+    font-family: Vazir !important;
+    background-image: url("assets/Background.png");
+    background-color: rgb(116, 118, 177);
+    background-size: 65%;
+    background-repeat: no-repeat;
+    background-position: bottom -350px left -220px;
+    /*direction: rtl;*/
+}
+
+h2{
+    color: white;
+}
+
+h3{
+    font-size: 10px;
+    text-align: center;
+}
+
+.top-bar{
+    padding-top: 10px;
+    font-size: 20px;
+    color: white;
+}
+
+.fa-user {
+    color: white;
+    font-size: 3em;
+}
+
+#LogoWhite {
+    width: 65px;
+    height: 55px;
+}
+
+.line{
+    border: 1px solid white;
+    width: auto;
+    height: 0px;
+}
+
+.col-centered {
+    padding-top: 2%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#Window {
+    width: 50%;
+    padding-top: 10%
+    
+}
+
+.button-grp {
+    height: 7%;
+    margin-top: 6%;
+}
+
+.choose {
+    border: 1px solid white;
+    background-color: rgb(60, 63, 101);
+    border-radius: 10px;
+    width: 60%;
+    height: 6%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7%;
+}
+
+.ttype {
+    font-size: 20px;
+    color: black;
+}
+
+.ttype2 {
+    font-size: 20px;
+    color: white;
+}
+
+.oneway {
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 2%;
+    border: 1px solid white;
+    height: 100%;
+    border-radius: 0px 10px 10px 0;
+    background-color: white;
+}
+
+.twoway{
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 2%;
+    border: 1px solid white;
+    height: 100%;
+    border-radius: 10px 0px 0px 10px;
+}
+
+.form {
+    background-color: rgb(60, 63, 101);
+    border-top-left-radius: 5%;
+    border-top-right-radius: 5%;
+    width: 60%;
+    height: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+.form-inputs {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-size: 20;
+    margin: 5px 5px 5px 5px;
+    padding-top: 4%;
+}
+
+.search {
+    background-color: rgb(211, 106, 90);
+    width: 60%;
+    height: 7%;
+    border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    font-size: 150%;
+    color: white;
+    
+}
+
+.copyright {
+    font-size: 15px;
+    color: white;
+    text-align: center;
+    margin-top: 8%;
+}
+
+.input-form {
+    width: 100% !important;
+}
+
+.notacc{
+    background-color: gray;
+}
+
+select{
+    background: white;
+    border: none;
+    width: 50px;
+    height: 35px;
+}
+
+.css-slideshow{
+    position: relative;
+    max-width: 200px;
+    height: 300px;
+    margin: auto;
+    padding-top: 20%;
+}
+.css-slideshow figure{
+    margin: 0;
+    position: absolute;
+    opacity:0;
+}
+
+@-webkit-keyframes xfade {
+    0%{opacity: 0;}
+    4%{opacity: 1;}
+    10%{opacity: 1;}
+    14%{opacity: 0;}
+    100%{opacity: 0;}
+}
+
+@keyframes xfade{
+    0%{opacity: 0;}
+    4%{opacity: 1;}
+    10%{opacity: 1;}
+    14%{opacity: 0;}
+    100%{opacity: 0;}
+}
+
+figure:nth-child(1) {
+    animation: xfade 40s linear 35s infinite;
+    -webkit-animation: xfade 40s linear 35s infinite;
+}
+figure:nth-child(2) {
+    animation: xfade 40s linear 30s infinite;
+    -webkit-animation: xfade 40s linear 30s infinite;
+}
+figure:nth-child(3) {
+    animation: xfade 40s linear 25s infinite;
+    -webkit-animation: xfade 40s linear 25s infinite;
+}
+figure:nth-child(4) {
+    animation: xfade 40s linear 20s infinite;
+    -webkit-animation: xfade 40s linear 20s infinite;
+}
+figure:nth-child(5) {
+    animation: xfade 40s linear 15s infinite;
+    -webkit-animation: xfade 40s linear 15s infinite;
+}
+figure:nth-child(6) {
+    animation: xfade 40s linear 10s infinite;
+    -webkit-animation: xfade 40s linear 10s infinite;
+}
+figure:nth-child(7) {
+    animation: xfade 40s linear 5s infinite;
+    -webkit-animation: xfade 40s linear 5s infinite;
+}
+figure:nth-child(8) {
+    animation: xfade 40s linear 0s infinite;
+    -webkit-animation: xfade 40s linear 0s infinite;
+}
+
+.css-slideshow:hover figure,
+#pauseShow:checked ~ figure {
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -o-animation-play-state: paused;
+    animation-play-state: paused;
+}
+
+.padd {
+    padding-top: 30%;
+}
